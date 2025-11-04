@@ -1,1 +1,15 @@
+[gd_scene load_steps=3 format=4]
 
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id="1"]
+[ext_resource path="res://scripts/game_manager.gd" type="Script" id="2"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8, 0, 0.6, 0, 1, 0, -0.6, 0, 0.8, Vector3(0, 10, 0))
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = BoxMesh {
+    size = Vector3(40, 0.5, 40)
+}
